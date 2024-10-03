@@ -1,0 +1,228 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0073e6, #002d72);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #f1f1f1;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    max-width: 600px;
+    padding: 0 15px;
+}
+
+/* Botones */
+button {
+    padding: 15px 30px;
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #ffaa00;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Animación de la introducción */
+.intro {
+    text-align: center;
+    opacity: 0;
+    animation: fadeInLogo 2s forwards, bounceIn 1s 0.5s forwards;
+}
+
+@keyframes fadeInLogo {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.logo {
+    width: 200px;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInLogo 3s forwards;
+}
+
+/* Sección de login */
+.login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 45, 114, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s forwards;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    top: 0%;
+    transform: translateY(-50%);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.login-form input {
+    padding: 15px;
+    margin: 10px 0;
+    width: calc(100% - 20px); /* Fix input width to ensure consistent sizing */
+    border: none;
+    border-radius: 30px;
+    background: #fff;
+    color: #333;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+    margin-left: 10px; /* Centering within the form */
+}
+
+.login-form input:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+.access-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Página de acceso */
+.access-page {
+    display: none;
+    text-align: center;
+    background: rgba(0, 45, 114, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s forwards;
+}
+
+.proof-images {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.proof-images img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proof-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Transición suave para cambiar las secciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .login-section, .access-page {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .proof-images img {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .proof-images img {
+        width: 80px;
+    }
+}
